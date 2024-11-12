@@ -23,8 +23,7 @@ public class GestionSalaire implements InterfaceGestionSalaire {
                     .orElse(null);
             FicheSalaire ficheSalaire = new FicheSalaire(id, dateF, nbHeures, tauxHeure, salaireBrut, salaireNet);
             salaires.add(ficheSalaire);
-            System.out.println("Salaire de l'employé "+employee.getNom()+" "+employee.getPrenom()+ " " + salaireNet);
-            return true;
+            return Data.storeSalary(ficheSalaire);
         } catch (Exception e) {
             return false;
         }
@@ -36,30 +35,12 @@ public class GestionSalaire implements InterfaceGestionSalaire {
         return salaireBrut;
     }
 
-    @Override
-    public double calculerBonus(int matricule) {
-        return 0;
-    }
 
-    @Override
-    public double calculerSalaireBonus(int matricule) {
-        return 0;
-    }
-
-    public void supprimerFicheSalaire(int id) {
-        FicheSalaire ficheSalaire = salaires.stream()
-                .filter(fiche -> fiche.getId() == id)
-                .findFirst()  // Get the first match
-                .orElse(null);
-        salaires.remove(ficheSalaire);
-        System.out.println("fiche supprimée");
+    public Boolean supprimerFicheSalaire(int id) {
+        return Data.deleteSalary(id);
     }
 
     public FicheSalaire chercherFicheSalaire(int id) {
-        FicheSalaire ficheSalaire = salaires.stream()
-                .filter(fiche -> fiche.getId() == id)
-                .findFirst()  // Get the first match
-                .orElse(null);
-        return ficheSalaire;
+        return Data.getSalary(id);
     }
 }

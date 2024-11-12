@@ -65,6 +65,10 @@ public class Employe {
         this.telephone = telephone;
     }
 
+    public String getGrade() {
+        return grade;
+    }
+
     @Override
     public String toString() {
         return "Employe{" +

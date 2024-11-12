@@ -1,11 +1,13 @@
 package models;
 
+import services.InterfaceGestionRecruitment;
+
 import java.util.Scanner;
 
 public class IHMEmploye {
     static Scanner sc = new Scanner(System.in);
 
-    static GestionRecruitment gestionEmploye = new GestionRecruitment();
+    static InterfaceGestionRecruitment gestionEmploye = new GestionRecruitment();
 
     int choice = 0;
 

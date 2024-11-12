@@ -1,9 +1,11 @@
 package services;
 
+import models.FicheSalaire;
+
 public interface InterfaceGestionSalaire {
     public Boolean calculerSalaireNet(int matricule, int nbHeures, double tauxHeure);
     public double calculerSalaireBrut(int matricule, int nbHeures, double tauxHeure);
-    public double calculerBonus(int matricule);
-    public double calculerSalaireBonus(int matricule);
+    public Boolean supprimerFicheSalaire(int id);
+    public FicheSalaire chercherFicheSalaire(int id);
 
 }

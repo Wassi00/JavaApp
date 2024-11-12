@@ -1,11 +1,13 @@
 package models;
 
+import services.InterfaceGestionSalaire;
+
 import java.util.Scanner;
 
 public class IHMSalaire {
     static Scanner sc = new Scanner(System.in);
 
-    static GestionSalaire gestionSalaire = new GestionSalaire();
+    static InterfaceGestionSalaire gestionSalaire = new GestionSalaire();
 
     int choice = 0;
 

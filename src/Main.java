@@ -1,3 +1,5 @@
+import models.Data;
+import models.IHM;
 import models.IHMEmploye;
 
 import java.sql.DriverManager;
@@ -8,8 +10,10 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
+    Data data = new Data();
 
-        IHMEmploye ihmEmploye = new IHMEmploye();
-        ihmEmploye.showMenu();
+
+    IHM ihmMain = new IHM();
+    ihmMain.showMainMenu();
     }
 }

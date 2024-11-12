@@ -74,4 +74,6 @@ public class FicheSalaire {
     public void setMontantNet(double montantNet) {
         this.montantNet = montantNet;
     }
+
+
 }

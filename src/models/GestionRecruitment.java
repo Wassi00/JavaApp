@@ -8,38 +8,19 @@ public class GestionRecruitment implements InterfaceGestionRecruitment {
 
     @Override
     public Boolean ajouterEmploye(Employe employee) {
-        try{
-            employees.add(employee);
-            System.out.print("employe ajouter avec succes");
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+        employees.add(employee);
+        return Data.storeEmployee(employee);
     }
 
     @Override
     public Boolean supprimerEmploye(int matricule) {
-        try{
             employees.removeIf(employee -> employee.getMatricule() == matricule);
-            System.out.println("employe supprime avec succes");
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
+            return Data.deleteEmployee(matricule);
     }
 
     @Override
     public Employe chercherEmploye(int matricule) {
-        try{
-                for (Employe employee : employees) {
-                    if (employee.getMatricule() == matricule) {
-                        return employee;
-                    }
-                }
-                return null;
-        } catch (Exception e) {
-            return null;
-        }
+        return Data.getEmployee(matricule);
     }
 
     @Override
