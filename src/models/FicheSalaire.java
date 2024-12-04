@@ -75,5 +75,15 @@ public class FicheSalaire {
         this.montantNet = montantNet;
     }
 
-
+    @Override
+    public String toString() {
+        return "FicheSalaire{" +
+                "id=" + id +
+                ", dateF='" + dateF + '\'' +
+                ", nbHeures=" + nbHeures +
+                ", tauxHeures=" + tauxHeures +
+                ", montantBrut=" + montantBrut +
+                ", montantNet=" + montantNet +
+                '}';
+    }
 }
