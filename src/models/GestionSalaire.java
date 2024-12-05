@@ -42,7 +42,7 @@ public class GestionSalaire implements InterfaceGestionSalaire {
                 employee = null;
             }
             FicheSalaire ficheSalaire = new FicheSalaire(id, dateF, nbHeures, tauxHeure, salaireBrut, salaireNet);
-            String query2 = "INSERT INTO FicheSalaire (id, dateF, nbHeures, tauxHeures, montantBrut, montantNet) VALUES (?, ?, ?, ?, ?, ?)";
+            String query2 = "INSERT INTO FicheSalaire (id, dateF, nbHeures, tauxHeures, montantBrut, montantNet, employe_matricule) VALUES (?, ?, ?, ?, ?, ?, ?)";
             if(connection != null) {
                 try (
                         PreparedStatement pstmt = connection.prepareStatement(query2)) {
@@ -52,6 +52,7 @@ public class GestionSalaire implements InterfaceGestionSalaire {
                     pstmt.setDouble(4, ficheSalaire.getTauxHeures());
                     pstmt.setDouble(5, ficheSalaire.getMontantBrut());
                     pstmt.setDouble(6, ficheSalaire.getMontantNet());
+                    pstmt.setInt(7, employee.getMatricule());
                     pstmt.executeUpdate();
                     System.out.println("fiche de salaire ajouter avec succes");
                     return true;
